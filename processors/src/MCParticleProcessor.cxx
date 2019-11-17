@@ -48,8 +48,11 @@ bool MCParticleProcessor::process(IEvent* ievent) {
         // Set the charge of the HpsMCParticle    
         particle->setCharge(lc_particle->getCharge());
 
-        // Set the HpsMCParticle type
+        // Set the time
         particle->setTime(lc_particle->getTime());  
+
+        // Set the generator status
+        particle->setGenStat(lc_particle->getGeneratorStatus());  
 
         // Set the energy of the HpsMCParticle
         particle->setEnergy(lc_particle->getEnergy());

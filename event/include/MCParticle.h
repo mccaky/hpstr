@@ -81,6 +81,13 @@ class MCParticle : public TObject {
         void setTime(const double time) { time_ = time; }; 
        
         /**
+         * Set the generator status of the particle.
+         *
+         * @param mass The generator status of the particle
+         */
+        void setGenStat(const int gen) { gen_ = gen; }; 
+       
+        /**
          * Set the momentum of the particle in GeV.
          *
          * @param momentum An array containing the three momentum components 
@@ -118,6 +125,9 @@ class MCParticle : public TObject {
         
         /** @return The time of the particle */
         double getTime() const { return time_; }; 
+        
+        /** @return The generator status */
+        int getGenStat() const { return gen_; }; 
         
         /** @return The momentum of the particle. */
         std::vector<double> getMomentum() const;  
@@ -182,6 +192,9 @@ class MCParticle : public TObject {
 
         /** The time of the particle */ 
         double time_{-9999}; 
+
+        /** The generator level status of the particle  */ 
+        int    gen_{-9999}; 
 
 };  // MCParticle
 
